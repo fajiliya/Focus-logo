@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FocusLog</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="card">
+    <h1>FocusLog</h1>
+    <p>Daily Focus Tracker</p>
+
+    <input type="text" id="subject" placeholder="Subject">
+    <input type="number" id="hours" placeholder="Hours">
+
+    <button onclick="addFocus()">Add</button>
+
+    <p id="output"></p>
+  </div>
+
+  
+  <script>
+function addFocus() {
+  let subject = document.getElementById("subject").value;
+  let hours = document.getElementById("hours").value;
+
+  if(subject === "" || hours === "") {
+    alert("Please enter subject and hours");
+    return;
+  }
+
+  document.getElementById("output").innerText =
+    subject + " studied for " + hours + " hours today";
+}
+</script>
+</body>
+</html>
